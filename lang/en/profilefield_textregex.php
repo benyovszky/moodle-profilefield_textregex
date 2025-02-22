@@ -34,4 +34,4 @@ $string['privacy:metadata:profilefield_textregex:fieldid'] = 'The ID of the prof
 $string['privacy:metadata:profilefield_textregex:tableexplanation'] = 'Additional profile data';
 $string['privacy:metadata:profilefield_textregex:userid'] = 'The ID of the user whose data is stored by the Short text with validation input user profile field';
 $string['regex'] = 'Regular expression';
-$string['regex_help'] = 'Perl style regular expression to test the field value against. The regex should align with the \'required\' setting, if it is not required, regex has to allow empty field as well. And also take a look at <a href="/admin/search.php?query=strictformsrequired">Strictness setting</a>. Please also include the delimiters. E.g: \"/^TEST[0-9A-F]{3}\/\$_postfix/\".';
+$string['regex_help'] = 'Perl style regular expression to test the field value against. The regex should align with the \'required\' setting, if it is not required, regex has to allow empty field as well. And also take a look at <a href="{$a}">Strictness setting</a>. Please also include the delimiters. E.g: \"/^TEST[0-9A-F]{3}\/\$_postfix/\".';

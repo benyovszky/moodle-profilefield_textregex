@@ -38,13 +38,15 @@ class profile_define_textregex extends profile_define_base {
      *
      * @param MoodleQuickForm $form
      * @throws coding_exception
+     * @throws moodle_exception
      */
     public function define_form_specific($form): void {
         // Param 3 for textregex type is the regex for the field.
         $form->addElement('text', 'param3', get_string('regex', 'profilefield_textregex'), ['size' => 150]);
         $form->setType('param3', PARAM_TEXT);
         $form->addRule('param3', null, 'required', null, 'client');
-        $form->addHelpButton('param3', 'regex', 'profilefield_textregex');
+        $stricturl = new \moodle_url('/admin/search.php', ['query' => 'strictformsrequired']);
+        $form->addHelpButton('param3', 'regex', 'profilefield_textregex', null, null, $stricturl);
 
         // Default data.
         $form->addElement('text', 'defaultdata', get_string('profiledefaultdata', 'admin'), ['size' => 50]);
