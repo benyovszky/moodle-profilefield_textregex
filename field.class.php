@@ -32,7 +32,6 @@
  * @copyright 2025 onwards Bence Molnar
  */
 class profile_field_textregex extends profile_field_base {
-
     /**
      * Overwrite the base class to display the data for this field
      */
@@ -42,17 +41,17 @@ class profile_field_textregex extends profile_field_base {
 
         // Are we creating a link?
         if (!empty($this->field->param4) && !empty($data)) {
-
             // Define the target.
             if (! empty($this->field->param5)) {
-                $target = 'target="'.$this->field->param5.'"';
+                $target = 'target="' . $this->field->param5 . '"';
             } else {
                 $target = '';
             }
 
             // Create the link.
-            $data = '<a href="'.str_replace('$$', urlencode($data),
-                    $this->field->param4).'" '.$target.'>'.htmlspecialchars($data, ENT_COMPAT).'</a>';
+            $lnk = str_replace('$$', urlencode($data), $this->field->param4);
+            $txt = htmlspecialchars($data, ENT_COMPAT);
+            $data = '<a href="' . $lnk . '" ' . $target . '>' . $txt . '</a>';
         }
 
         return $data;
@@ -70,8 +69,12 @@ class profile_field_textregex extends profile_field_base {
         $fieldtype = 'text';
 
         // Create the form field.
-        $mform->addElement($fieldtype, $this->inputname, format_string($this->field->name),
-            ['size' => $size]);
+        $mform->addElement(
+            $fieldtype,
+            $this->inputname,
+            format_string($this->field->name),
+            ['size' => $size]
+        );
         $mform->setType($this->inputname, PARAM_TEXT);
         $mform->addRule($this->inputname, get_string('errorregex', 'profilefield_textregex', $regex), 'regex', $regex, 'client');
     }
