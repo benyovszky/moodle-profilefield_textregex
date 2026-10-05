@@ -47,7 +47,7 @@ use coding_exception;
  */
 class provider implements
     \core_privacy\local\metadata\provider,
-    \core_privacy\local\request\plugin\provider
+    \core_privacy\local\request\plugin\provider,
     core_userlist_provider {
     /**
      * Returns metadata about this system.
