@@ -30,8 +30,8 @@ defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
 
-require_once($CFG->dirroot.'/user/profile/lib.php');
-require_once($CFG->dirroot.'/user/profile/field/textregex/field.class.php');
+require_once($CFG->dirroot . '/user/profile/lib.php');
+require_once($CFG->dirroot . '/user/profile/field/textregex/field.class.php');
 
 use profile_field_textregex;
 use advanced_testcase;
