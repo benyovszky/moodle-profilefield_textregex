@@ -87,16 +87,16 @@ final class provider_test extends provider_testcase {
         // Create profile category.
         $categoryid = $this->add_profile_category();
         // Create textregex profile field.
-        $textregexprofilefieldid = $this->add_profile_field($categoryid, 'textregex');
+        $textregexfieldid = $this->add_profile_field($categoryid, 'textregex');
         // Create checkbox profile field.
-        $checkboxprofilefieldid = $this->add_profile_field($categoryid, 'checkbox');
+        $checkboxfieldid = $this->add_profile_field($categoryid, 'checkbox');
         // Create a user.
         $user = $this->getDataGenerator()->create_user();
         $context = context_user::instance($user->id);
         // Add textregex user info data.
-        $this->add_user_info_data($user->id, $textregexprofilefieldid, 'test textregex');
+        $this->add_user_info_data($user->id, $textregexfieldid, 'test textregex');
         // Add checkbox user info data.
-        $this->add_user_info_data($user->id, $checkboxprofilefieldid, 'test data');
+        $this->add_user_info_data($user->id, $checkboxfieldid, 'test data');
         $writer = writer::with_context($context);
         $this->assertFalse($writer->has_any_data());
         $this->export_context_data_for_user($user->id, $context, 'profilefield_textregex');
@@ -118,16 +118,16 @@ final class provider_test extends provider_testcase {
         // Create profile category.
         $categoryid = $this->add_profile_category();
         // Create textregex profile field.
-        $textregexprofilefieldid = $this->add_profile_field($categoryid, 'textregex');
+        $textregexfieldid = $this->add_profile_field($categoryid, 'textregex');
         // Create checkbox profile field.
-        $checkboxprofilefieldid = $this->add_profile_field($categoryid, 'checkbox');
+        $checkboxfieldid = $this->add_profile_field($categoryid, 'checkbox');
         // Create a user.
         $user = $this->getDataGenerator()->create_user();
         $context = context_user::instance($user->id);
         // Add textregex user info data.
-        $this->add_user_info_data($user->id, $textregexprofilefieldid, 'test textregex');
+        $this->add_user_info_data($user->id, $textregexfieldid, 'test textregex');
         // Add checkbox user info data.
-        $this->add_user_info_data($user->id, $checkboxprofilefieldid, 'test data');
+        $this->add_user_info_data($user->id, $checkboxfieldid, 'test data');
         // Check that we have two entries.
         $userinfodata = $DB->get_records('user_info_data', ['userid' => $user->id]);
         $this->assertCount(2, $userinfodata);
@@ -149,16 +149,16 @@ final class provider_test extends provider_testcase {
         // Create profile category.
         $categoryid = $this->add_profile_category();
         // Create textregex profile field.
-        $textregexprofilefieldid = $this->add_profile_field($categoryid, 'textregex');
+        $textregexfieldid = $this->add_profile_field($categoryid, 'textregex');
         // Create checkbox profile field.
-        $checkboxprofilefieldid = $this->add_profile_field($categoryid, 'checkbox');
+        $checkboxfieldid = $this->add_profile_field($categoryid, 'checkbox');
         // Create a user.
         $user = $this->getDataGenerator()->create_user();
         $context = context_user::instance($user->id);
         // Add textregex user info data.
-        $this->add_user_info_data($user->id, $textregexprofilefieldid, 'test textregex');
+        $this->add_user_info_data($user->id, $textregexfieldid, 'test textregex');
         // Add checkbox user info data.
-        $this->add_user_info_data($user->id, $checkboxprofilefieldid, 'test data');
+        $this->add_user_info_data($user->id, $checkboxfieldid, 'test data');
         // Check that we have two entries.
         $userinfodata = $DB->get_records('user_info_data', ['userid' => $user->id]);
         $this->assertCount(2, $userinfodata);
