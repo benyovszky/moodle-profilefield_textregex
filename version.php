@@ -29,5 +29,5 @@ $plugin->component = 'profilefield_textregex'; // Full name of the plugin (used 
 $plugin->version   = 2026100500;        // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2021051718;        // Requires this Moodle version.
 $plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0.1';
+$plugin->release = '1.0.2';
 $plugin->supported = [311, 503];
