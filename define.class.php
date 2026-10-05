@@ -32,7 +32,6 @@
  * @copyright 2025 onwards Bence Molnar
  */
 class profile_define_textregex extends profile_define_base {
-
     /**
      * Add elements for creating/editing a textregex profile field.
      *
@@ -71,7 +70,6 @@ class profile_define_textregex extends profile_define_base {
         ];
         $form->addElement('select', 'param5', get_string('profilefieldlinktarget', 'admin'), $targetoptions);
         $form->setType('param5', PARAM_RAW);
-
     }
 
     /**
@@ -93,5 +91,4 @@ class profile_define_textregex extends profile_define_base {
 
         return $errors;
     }
-
 }
