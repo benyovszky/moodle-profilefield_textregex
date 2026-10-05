@@ -45,7 +45,6 @@ use coding_exception;
  * @copyright 2025 onwards Bence Molnar
  */
 final class provider_test extends provider_testcase {
-
     /**
      * Basic setup for these tests.
      */
@@ -163,8 +162,11 @@ final class provider_test extends provider_testcase {
         // Check that we have two entries.
         $userinfodata = $DB->get_records('user_info_data', ['userid' => $user->id]);
         $this->assertCount(2, $userinfodata);
-        $approvedlist = new approved_contextlist($user, 'profilefield_textregex',
-            [$context->id]);
+        $approvedlist = new approved_contextlist(
+            $user,
+            'profilefield_textregex',
+            [$context->id]
+        );
         provider::delete_data_for_user($approvedlist);
         // Check that the correct profile field has been deleted.
         $userinfodata = $DB->get_records('user_info_data', ['userid' => $user->id]);
